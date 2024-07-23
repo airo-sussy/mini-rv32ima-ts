@@ -1,0 +1,14 @@
+// Static tasks configuration.
+[
+  {
+    "label": "Rojo autogenerate sourcemap",
+    "command": "rojo sourcemap --watch --output sourcemap.json --include-non-scripts",
+    "use_new_terminal": true
+  },
+  // Eventually I will write an extension for Zed (in Rust) to do this for me.
+  {
+    "label": "Autobundle darklua code",
+    "command": "darklua process src out --watch",
+    "use_new_terminal": true
+  }
+]
