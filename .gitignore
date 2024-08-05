@@ -1,6 +1,7 @@
-# Project place file
-/mini-rv64ima-luau.rbxlx
+/node_modules
+/out
+/include
+*.tsbuildinfo
 
-# Roblox Studio lock files
-/*.rbxlx.lock
-/*.rbxl.lock
+place.rbxl
+place.rbxl.lock
