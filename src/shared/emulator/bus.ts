@@ -2,7 +2,11 @@
 /// generates per-hart software interrupts and timer
 
 import Clint from "./clint";
-import Device from "./device";
+import Device from "./abstract/device";
+import Plic from "./plic";
+import Uart from "./uart";
+import Virtio from "./virtio";
+import Dram from "./dram";
 
 /// The address which the core-local interruptor (CLINT) starts. It contains the timer and
 /// generates per-hart software interrupts and timer
@@ -43,6 +47,7 @@ export default class Bus extends Device {
 
 		this.clint = new Clint();
 		this.plic = new Plic();
+		// UART is non-functional until we implement a terminal
 		this.uart = new Uart();
 		this.virtio = new Virtio(diskImage);
 		this.dram = new Dram(binary);

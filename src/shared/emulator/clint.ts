@@ -1,7 +1,7 @@
 /// The address of a mtimecmp register starts. A mtimecmp is a dram mapped machine mode timer
 
 import { CLINT_BASE } from "./bus";
-import Device from "./device";
+import Device from "./abstract/device";
 
 /// compare register, used to trigger an interrupt when mtimecmp is greater than or equal to mtime.
 export const CLINT_MTIMECMP: number = CLINT_BASE + 0x4000;
