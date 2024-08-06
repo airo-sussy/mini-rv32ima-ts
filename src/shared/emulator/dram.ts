@@ -1,5 +1,6 @@
 import Device from "./abstract/device";
 import { DRAM_BASE } from "./bus";
+import { LoadAccessFault, StoreAMOAccessFault } from "./trap";
 
 /// Default dram size (128MiB).
 export const DRAM_SIZE: number = 1024 * 1024 * 128;

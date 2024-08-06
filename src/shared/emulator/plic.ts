@@ -5,6 +5,7 @@
 
 import { PLIC_BASE } from "./bus";
 import Device from "./abstract/device";
+import { LoadAccessFault, StoreAMOAccessFault } from "./trap";
 
 /// The address of interrupt pending bits.
 export const PLIC_PENDING: number = PLIC_BASE + 0x1000;

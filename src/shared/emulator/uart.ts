@@ -4,6 +4,7 @@
 
 import Device from "./abstract/device";
 import { UART_BASE, UART_SIZE } from "./bus";
+import { LoadAccessFault, StoreAMOAccessFault } from "./trap";
 
 /// The interrupt request of UART.
 export const UART_IRQ: number = 10;
@@ -40,9 +41,16 @@ export default class Uart extends Device {
 	}
 
 	public load(address: number, size: number): number {
-		throw "uart not implemented";
+		throw new LoadAccessFault();
 	}
+
 	public store(address: number, size: number, value: number): void {
-		throw "uart not implemented";
+		throw new StoreAMOAccessFault();
+	}
+
+	public isInterrupting() {
+		const old = this.interrupting;
+		this.interrupting = !this.interrupting;
+		return old;
 	}
 }

@@ -2,6 +2,7 @@
 
 import { CLINT_BASE } from "./bus";
 import Device from "./abstract/device";
+import { LoadAccessFault, StoreAMOAccessFault } from "./trap";
 
 /// compare register, used to trigger an interrupt when mtimecmp is greater than or equal to mtime.
 export const CLINT_MTIMECMP: number = CLINT_BASE + 0x4000;

@@ -7,6 +7,7 @@ import Plic from "./plic";
 import Uart from "./uart";
 import Virtio from "./virtio";
 import Dram from "./dram";
+import { LoadAccessFault, StoreAMOAccessFault } from "./trap";
 
 /// The address which the core-local interruptor (CLINT) starts. It contains the timer and
 /// generates per-hart software interrupts and timer
